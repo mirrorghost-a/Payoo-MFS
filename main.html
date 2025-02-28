@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payoo-MFS</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.23/dist/full.min.css" rel="stylesheet" type="text/css" />
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+<style>
+    body {
+        font-family: 'Outfit', sans-serif;
+        color: black;
+        overflow-x:hidden;
+    }
+    button:hover{
+        background: rgba(19, 45, 177, 0.075);
+    }
+    /* Hide the spinner */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+/* Hide the spinner */
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+#userBalance::before{
+    content: "$";
+}
+</style>
+</head>
+<body class="bg-slate-800">
+    <section class="max-w-md min-h-screen bg-slate-100 mx-auto">
+        <header class="bg-white items-center rounded-b-3xl pb-6">
+            <nav class="max-w-[448.1px] h-[84px] border-b-gray-200 border-b-[1px] flex justify-around items-center">
+                <ul class="flex items-center">
+                    <li><img width="50px" height="48px" src="assets/Group.png" alt=""></li>
+                    <li>
+                        <p id="userBalance" class="font-extrabold text-lg"></p>
+                        <p class="text-sm text-gray-400">Available Balance</p>
+                    </li>
+                </ul>
+                <button id="logout" class="h-[38px] max-w-[102px] w-full border-[1px] rounded-lg flex hover:bg-green-300 justify-evenly items-center">
+                    <img src="assets/logout.png" width="20px" height="20px" alt="">
+                    <p class="text-sm">log Out</p>
+                </button>
+            </nav>
+            <!-- welcome payooo -->
+            <div class="max-w-[402px] mx-auto mt-8">
+                <h1 class="font-bold text-2xl">🔥 Welcome to Payooo!</h1>
+                <br>
+                <p>Enjoy easy and convenient financial services with us. Cashout charge is low and </p>
+            </div>
+            <!-- options -->
+             <section id="option" class="max-w-[402px] mx-auto mt-6 grid grid-cols-3 grid-rows-2 gap-2">
+                <button name="main" class="border-[1px] border-gray-300 w-[123px] h-[90px] rounded-xl flex justify-center flex-col items-center">
+                    <img src="assets/wallet1.png" width="22%" alt="">
+                    <p>Add Money</p>
+                </button>
+                <button name="cashout" class="border-[1px] border-gray-300 max-w-[123px] h-[90px] rounded-xl flex justify-center flex-col items-center">
+                    <img src="assets/send1.png" width="22%" alt="">
+                    <p>Cashout</p>
+                </button>
+                <button name="tmoney" class="border-[1px] border-gray-300 max-w-[123px] h-[90px] rounded-xl flex justify-center flex-col items-center">
+                    <img src="assets/money1.png" width="22%" alt="">
+                    <p>Transfer Money</p>
+                </button>
+                <button name="coupon" class="border-[1px] border-gray-300 max-w-[123px] h-[90px] rounded-xl flex justify-center flex-col items-center">
+                    <img src="assets/bonus1.png" width="22%" alt="">
+                    <p>Get Bonus</p>
+                </button>
+                <button class="border-[1px] border-gray-300 max-w-[123px] h-[90px] rounded-xl flex justify-center flex-col items-center">
+                    <img src="assets/purse1.png" width="22%" alt="">
+                    <p>Pay Bill</p>
+                </button>
+                <button class="border-[1px] border-gray-300 max-w-[123px] h-[90px] rounded-xl flex justify-center flex-col items-center">
+                    <img src="assets/transaction1.png" width="22%" alt="">
+                    <p>Transaction</p>
+                </button>
+             </section>
+        </header>
+        <!-- defult -->
+        <main id="defult" class="mt-8 max-w-[402px] mx-auto">
+            <div class="flex justify-between">
+                <p class="font-semibold text-lg">Latest Payment</p>
+                <p class="text-gray-600 text-sm">View All</p>
+            </div>
+                <div class="grid grid-cols-1 grid-rows-4 gap-3">
+                    <div class="h-[72px] bg-white rounded-xl flex items-center justify-between ">
+                        <div class="flex items-center ml-4">
+                            <div class="h-11 w-11 flex justify-center items-center bg-slate-100 rounded-full mr-2"><img src="assets/wallet1.png" alt=""></div>
+                            <div>
+                                <p class="font-semibold text-base">Electricity Bill</p>
+                                <p class="text-gray-600 text-xs">Today 01:44AM</p>
+                            </div>
+                        </div>
+                        <div class="mr-4">
+                            <h1 class="h-1 w-1 bg-black rounded-full mb-1"></h1>
+                            <h1 class="h-1 w-1 bg-black rounded-full mb-1"></h1>
+                            <h1 class="h-1 w-1 bg-black rounded-full"></h1>
+                        </div>
+                    </div>
+                    <div class="h-[72px] bg-white rounded-xl flex items-center justify-between ">
+                        <div class="flex items-center ml-4">
+                            <div class="h-11 w-11 flex justify-center items-center bg-slate-100 rounded-full mr-2"><img src="assets/wallet1.png" alt=""></div>
+                            <div>
+                                <p class="font-semibold text-base">Bank Deposit</p>
+                                <p class="text-gray-600 text-xs">Today 01:44AM</p>
+                            </div>
+                        </div>
+                        <div class="mr-4">
+                            <h1 class="h-1 w-1 bg-black rounded-full mb-1"></h1>
+                            <h1 class="h-1 w-1 bg-black rounded-full mb-1"></h1>
+                            <h1 class="h-1 w-1 bg-black rounded-full"></h1>
+                        </div>
+                    </div>
+                    <div class="h-[72px] bg-white rounded-xl flex items-center justify-between ">
+                        <div class="flex items-center ml-4">
+                            <div class="h-11 w-11 flex justify-center items-center bg-slate-100 rounded-full mr-2"><img src="assets/wallet1.png" alt=""></div>
+                            <div>
+                                <p class="font-semibold text-base">Mobile Recharge</p>
+                                <p class="text-gray-600 text-xs">Today 01:44AM</p>
+                            </div>
+                        </div>
+                        <div class="mr-4">
+                            <h1 class="h-1 w-1 bg-black rounded-full mb-1"></h1>
+                            <h1 class="h-1 w-1 bg-black rounded-full mb-1"></h1>
+                            <h1 class="h-1 w-1 bg-black rounded-full"></h1>
+                        </div>
+                    </div>
+                    <div class="h-[72px] bg-white rounded-xl flex items-center justify-between ">
+                        <div class="flex items-center ml-4">
+                            <div class="h-11 w-11 flex justify-center items-center bg-slate-100 rounded-full mr-2"><img src="assets/wallet1.png" alt=""></div>
+                            <div>
+                                <p class="font-semibold text-base">Gas Bill</p>
+                                <p class="text-gray-600 text-xs">Today 01:44AM</p>
+                            </div>
+                        </div>
+                        <div class="mr-4">
+                            <h1 class="h-1 w-1 bg-black rounded-full mb-1"></h1>
+                            <h1 class="h-1 w-1 bg-black rounded-full mb-1"></h1>
+                            <h1 class="h-1 w-1 bg-black rounded-full"></h1>
+                        </div>
+                    </div>
+                </div>
+        </main>
+        <!-- Add Money -->
+        <main id="money" class="mt-8 max-w-[402px] mx-auto hidden">
+            <p class="font-semibold text-lg">Add Money</p>
+                <form class="bg-white max-w-[402px] min-h-[501px] mx-auto mt-3 rounded-3xl p-8" >
+                    <p id="warning-log" class="text-red-700 font-bold hidden">!!Wrong Account Number or Pin!!</p>
+                    <p class="text-black font-medium text-base mb-4">Select A Bank</p>
+                    <div class="max-w-[338px] w-full dropdown dropdown-end">
+                        <select id="selection" class="select bg-[#F4F5F7] font-light h-[52px] w-full max-w-[338px] rounded-3xl mb-4 pl-4">
+                            <option disabled selected>Select a Bank</option>
+                            <option>Green Bank</option>
+                            <option>Payoo</option>
+                            <option>Brac</option>
+                            <option>DBBL</option>
+                            <option>Sonali Bank</option>
+                          </select>
+                    <p class="text-black font-medium text-base mb-4">Bank Account Number</p>
+                    <input type="number" name="" id="accountNumber" placeholder="Enter 11 digit account number" class="bg-[#F4F5F7] font-light w-full h-[52px] max-w-[338px] mb-4 rounded-3xl pl-4 scrollabale" required>
+                    <p class="text-black mb-4 font-medium text-base">Amount to Add</p>
+                    <input type="number" name="" id="amount" placeholder="Add Amount to withdraw" class="bg-[#F4F5F7] font-light h-[52px] w-full max-w-[338px] rounded-3xl mb-4 pl-4"  required><br>
+                    <p class="text-black mb-4 font-medium text-base">Pin Number</p>
+                    <input type="password" name="" id="accountPin" placeholder="Enter 4 digit pin number" class="bg-[#F4F5F7] font-light h-[52px] w-full max-w-[338px] rounded-3xl mb-4 pl-4"  required><br>
+                    <button id="addMoney" class="h-[52px] w-full max-w-[338px] text-white bg-blue-600 font-semibold text-xl rounded-3xl">add Money</button>
+                </form>
+        </main>
+        <!-- Cashout -->
+        <main id="cashout" class="mt-8 max-w-[402px] mx-auto hidden">
+            <p class="font-semibold text-lg">Cashout</p>
+                <form class="bg-white max-w-[402px] min-h-[501px] mx-auto mt-3 rounded-3xl p-8" >
+                    <p id="warning-log" class="text-red-700 font-bold hidden">!!Wrong Account Number or Pin!!</p>
+                    <p class="text-black font-medium text-base mb-4">Bank Account Number</p>
+                    <input type="number" name="" id="cashoutN" placeholder="Enter 11 digit account number" class="bg-[#F4F5F7] font-light w-full h-[52px] max-w-[338px] mb-4 rounded-3xl pl-4 scrollabale" required>
+                    <p class="text-black mb-4 font-medium text-base">Amount to Add</p>
+                    <input type="number" name="" id="cashouta" placeholder="Add Amount to withdraw" class="bg-[#F4F5F7] font-light h-[52px] w-full max-w-[338px] rounded-3xl mb-4 pl-4"  required><br>
+                    <p class="text-black mb-4 font-medium text-base">Pin Number</p>
+                    <input type="password" name="" id="cashoutP" placeholder="Enter 4 digit pin number" class="bg-[#F4F5F7] font-light h-[52px] w-full max-w-[338px] rounded-3xl mb-4 pl-4"  required><br>
+                    <button id="cashoutB" class="h-[52px] w-full max-w-[338px] text-white bg-blue-600 font-semibold text-xl rounded-3xl">CashOut</button>
+                </form>
+        </main>
+        <!-- Transfer Money -->
+        <main id="tmoney" class="mt-8 max-w-[402px] mx-auto hidden">
+            <p class="font-semibold text-lg">Transfer Money</p>
+                <form class="bg-white max-w-[402px] min-h-[501px] mx-auto mt-3 rounded-3xl p-8" >
+                    <p id="warning-log" class="text-red-700 font-bold hidden">!!Wrong Account Number or Pin!!</p>
+                    <p class="text-black font-medium text-base mb-4">User Account Number</p>
+                    <input type="number" name="" id="TMN" placeholder="Enter 11 digit number" class="bg-[#F4F5F7] font-light w-full h-[52px] max-w-[338px] mb-4 rounded-3xl pl-4 scrollabale" required>
+                    <p class="text-black mb-4 font-medium text-base">Amount</p>
+                    <input type="number" name="" id="TMa" placeholder="Enter amount to transfer" class="bg-[#F4F5F7] font-light h-[52px] w-full max-w-[338px] rounded-3xl mb-4 pl-4"  required><br>
+                    <p class="text-black mb-4 font-medium text-base">Pin Number</p>
+                    <input type="password" name="" id="TMP" placeholder="Enter 4 digit pin number" class="bg-[#F4F5F7] font-light h-[52px] w-full max-w-[338px] rounded-3xl mb-4 pl-4"  required><br>
+                    <button id="TMB" class="h-[52px] w-full max-w-[338px] text-white bg-blue-600 font-semibold text-xl rounded-3xl">Send Now</button>
+                </form>
+        </main>
+        <!-- Cupon -->
+        <main id="coupon" class="mt-8 max-w-[402px] mx-auto hidden">
+            <p class="font-semibold text-lg">Get Bonus</p>
+                <form class="bg-white max-w-[402px] min-h-[501px] mx-auto mt-3 rounded-3xl p-8" >
+                    <p id="warning-log" class="text-red-700 font-bold hidden">!!Wrong Coupon Number!!</p>
+                    <p class="text-black font-medium text-base mb-4">Enter Bonus Coupon</p>
+                    <input type="number" name="" id="BCN" placeholder="Enter your coupon" class="bg-[#F4F5F7] font-light w-full h-[52px] max-w-[338px] mb-4 rounded-3xl pl-4 scrollabale" required>
+                    <button id="BCB" class="h-[52px] w-full max-w-[338px] text-white bg-blue-600 font-semibold text-xl rounded-3xl">Send Now</button>
+                </form>
+        </main>
+    </section>
+    <script src="userinfo.js"></script>
+    <script src="main.js"></script>
+    <script src="addmoney.js"></script>
+    <script src="cashout.js"></script>
+    <script src="transfermoney.js"></script>
+    <script src="getBonous.js"></script>
+</body>
+</html>
